@@ -16,6 +16,8 @@
 		C2F13BCB27A4A89A00986C19 /* ToDoListSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BCA27A4A89A00986C19 /* ToDoListSteps.swift */; };
 		C2F13BCD27A4A97200986C19 /* ToDoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BCC27A4A97200986C19 /* ToDoListController.swift */; };
 		C2F13BCF27A4A98A00986C19 /* ToDoListStepsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BCE27A4A98A00986C19 /* ToDoListStepsController.swift */; };
+		C2F13BD127A4BCD800986C19 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BD027A4BCD800986C19 /* ToDoListTableViewController.swift */; };
+		C2F13BD327A4BCEF00986C19 /* ToDoListStepsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BD227A4BCEF00986C19 /* ToDoListStepsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C2F13BCA27A4A89A00986C19 /* ToDoListSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListSteps.swift; sourceTree = "<group>"; };
 		C2F13BCC27A4A97200986C19 /* ToDoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListController.swift; sourceTree = "<group>"; };
 		C2F13BCE27A4A98A00986C19 /* ToDoListStepsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListStepsController.swift; sourceTree = "<group>"; };
+		C2F13BD027A4BCD800986C19 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		C2F13BD227A4BCEF00986C19 /* ToDoListStepsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListStepsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		C2F13BC627A4A61600986C19 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C2F13BD027A4BCD800986C19 /* ToDoListTableViewController.swift */,
+				C2F13BD227A4BCEF00986C19 /* ToDoListStepsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F13BD127A4BCD800986C19 /* ToDoListTableViewController.swift in Sources */,
+				C2F13BD327A4BCEF00986C19 /* ToDoListStepsTableViewController.swift in Sources */,
 				C2F13BCD27A4A97200986C19 /* ToDoListController.swift in Sources */,
 				C2F13BCF27A4A98A00986C19 /* ToDoListStepsController.swift in Sources */,
 				C2F13BAF27A4980800986C19 /* AppDelegate.swift in Sources */,
