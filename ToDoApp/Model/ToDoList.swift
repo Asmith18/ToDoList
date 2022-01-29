@@ -12,9 +12,9 @@ class ToDoList: Codable {
     var task: String
     var isChecked: Bool
     let id: UUID
-    var numberOfSteps: String
+    var numberOfSteps: [ToDoListSteps]
     
-    init(id: UUID = UUID(), task: String, isChecked: Bool = false, numberOfSteps: String) {
+    init(id: UUID = UUID(), task: String, isChecked: Bool = false, numberOfSteps: [ToDoListSteps]) {
         self.id = id
         self.task = task
         self.isChecked = isChecked

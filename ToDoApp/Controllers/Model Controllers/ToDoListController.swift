@@ -20,13 +20,13 @@ class ToDoListController {
     
     
 //MARK: - CRUD
-    func createToDo(task: String, numberOfSteps: String) {
+    func createToDo(task: String, numberOfSteps: [ToDoListSteps] = []) {
         let toDo = ToDoList(task: task, numberOfSteps: numberOfSteps)
         toDos.append(toDo)
         saveToDoToDisk()
     }
     
-    func updateToDo(toDo: ToDoList, task: String) {
+    func updateToDo(toDo: ToDoList, task: String, isChecked: Bool = Bool()) {
         toDo.task = task
         saveToDoToDisk()
     }

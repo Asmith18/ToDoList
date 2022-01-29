@@ -9,15 +9,20 @@ import Foundation
 
 class ToDoListStepsController: Codable {
     
-    static func createStep() {
-        
+    static func createStep(step: String, toDo: ToDoList) {
+        let toDoListStep = ToDoListSteps(step: step)
+        toDo.numberOfSteps.append(toDoListStep)
+        ToDoListController.sharedInstance.saveToDoToDisk()
     }
     
-    static func deleteStep() {
-        
+    static func deleteStep(step: ToDoListSteps, in toDo: ToDoList) {
+        guard let index = toDo.numberOfSteps.firstIndex(of: step) else {return}
+        toDo.numberOfSteps.remove(at: index)
+        ToDoListController.sharedInstance.saveToDoToDisk()
     }
     
-    static func toggleIsDone() {
-        
+    static func toggleIsDone(step: ToDoListSteps) {
+        step.isDone.toggle()
+        ToDoListController.sharedInstance.saveToDoToDisk()
     }
 }
