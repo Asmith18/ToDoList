@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="676.81159420289862" y="101.78571428571428"/>
         </scene>
-        <!--Table View Controller-->
+        <!--To Do List Steps Table View Controller-->
         <scene sceneID="V3c-hY-Vhc">
             <objects>
-                <tableViewController id="Vtt-6J-UEk" sceneMemberID="viewController">
+                <tableViewController id="Vtt-6J-UEk" customClass="ToDoListStepsTableViewController" customModule="ToDoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="R0K-DY-CAx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,6 +138,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Add" buttonSize="large"/>
+                                            <connections>
+                                                <action selector="addButton:" destination="Vtt-6J-UEk" eventType="touchUpInside" id="ldn-gc-cEO"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -151,7 +154,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="cQA-Hi-sT8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepsCell" rowHeight="77" id="cQA-Hi-sT8" customClass="ToDoListStepsTableViewCell" customModule="ToDoApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cQA-Hi-sT8" id="YQO-ul-2cg">
@@ -171,6 +174,9 @@
                                                     <rect key="frame" x="312.5" y="0.0" width="45.5" height="39"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="toggleIsDoneButton:" destination="cQA-Hi-sT8" eventType="touchUpInside" id="UNc-Hq-Ezg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -182,6 +188,10 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="PEk-or-lgB" secondAttribute="bottom" constant="8" id="Z0F-bk-KMZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="isDoneButton" destination="AWY-fT-dEv" id="LZA-86-CMh"/>
+                                    <outlet property="stepNameTextLabel" destination="Ehz-LR-tJQ" id="ZrT-MV-lx4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -190,6 +200,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="mYB-7n-GW1"/>
+                    <connections>
+                        <outlet property="toDoListStepNameTextField" destination="GiE-a4-0Lp" id="D7c-tN-MW1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocC-UD-qeY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

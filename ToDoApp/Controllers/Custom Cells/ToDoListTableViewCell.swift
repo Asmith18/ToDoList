@@ -25,7 +25,7 @@ class ToDoListTableViewCell: UITableViewCell {
     
     func updateViews(toDo: ToDoList) {
         toDoListNameTextLabel.text = toDo.task
-        numberOfStepsTextLabel.text = "\(toDo.numberOfSteps) Steps"
+        numberOfStepsTextLabel.text = "# \(toDo.numberOfSteps)"
         let favoriteImageName = toDo.isChecked ? "checkmark.diamond.fill" : "checkmark.diamond"
         let favoriteImage = UIImage(systemName: favoriteImageName)
         checkedButton.setImage(favoriteImage, for: .normal)
