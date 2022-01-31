@@ -111,9 +111,9 @@
 		C2F13BC427A4A5FC00986C19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C22AF02827A592AC0015FEE2 /* Custom Cells */,
 				C2F13BC727A4A61D00986C19 /* Model Controllers */,
 				C2F13BC627A4A61600986C19 /* View Controllers */,
+				C22AF02827A592AC0015FEE2 /* Custom Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

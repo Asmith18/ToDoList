@@ -20,16 +20,15 @@ class ToDoListTableViewCell: UITableViewCell {
     
     
     
-    weak var delegate:ToDoListTableViewCellDelegate?
+    weak var delegate: ToDoListTableViewCellDelegate?
     
     
     func updateViews(toDo: ToDoList) {
         toDoListNameTextLabel.text = toDo.task
-        numberOfStepsTextLabel.text = "# \(toDo.numberOfSteps)"
+//        numberOfStepsTextLabel.text = "\(toDo.numberOfSteps)"
         let favoriteImageName = toDo.isChecked ? "checkmark.diamond.fill" : "checkmark.diamond"
         let favoriteImage = UIImage(systemName: favoriteImageName)
         checkedButton.setImage(favoriteImage, for: .normal)
-        
     }
     
 //MARK: - Actions

@@ -28,6 +28,7 @@ class ToDoListTableViewController: UITableViewController {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListCell", for: indexPath) as? ToDoListTableViewCell else { return UITableViewCell() }
         let toDo = ToDoListController.sharedInstance.toDos[indexPath.row]
         cell.delegate = self
+        
         cell.updateViews(toDo: toDo)
         
         
@@ -38,10 +39,9 @@ class ToDoListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let taskToDelete = ToDoListController.sharedInstance.toDos[indexPath.row]
+            ToDoListController.sharedInstance.deleteToDo(toDo: taskToDelete)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     @IBAction func createButton(_ sender: Any) {
@@ -49,12 +49,6 @@ class ToDoListTableViewController: UITableViewController {
         ToDoListController.sharedInstance.createToDo(task: task)
         tableView.reloadData()
     }
-    
-    /*
-    // MARK: - segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
-    */
 }
 
 extension ToDoListTableViewController: ToDoListTableViewCellDelegate {
