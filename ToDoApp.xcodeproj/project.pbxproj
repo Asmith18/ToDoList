@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C22AF02A27A5930B0015FEE2 /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AF02927A5930B0015FEE2 /* ToDoListTableViewCell.swift */; };
+		C22AF02C27A777860015FEE2 /* ToDoListStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22AF02B27A777860015FEE2 /* ToDoListStepsTableViewCell.swift */; };
 		C2F13BAF27A4980800986C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BAE27A4980800986C19 /* AppDelegate.swift */; };
 		C2F13BB127A4980800986C19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F13BB027A4980800986C19 /* SceneDelegate.swift */; };
 		C2F13BB627A4980800986C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F13BB427A4980800986C19 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C22AF02927A5930B0015FEE2 /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
+		C22AF02B27A777860015FEE2 /* ToDoListStepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListStepsTableViewCell.swift; sourceTree = "<group>"; };
 		C2F13BAB27A4980800986C19 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F13BAE27A4980800986C19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2F13BB027A4980800986C19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C22AF02827A592AC0015FEE2 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C22AF02927A5930B0015FEE2 /* ToDoListTableViewCell.swift */,
+				C22AF02B27A777860015FEE2 /* ToDoListStepsTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		C2F13BA227A4980800986C19 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +111,7 @@
 		C2F13BC427A4A5FC00986C19 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C22AF02827A592AC0015FEE2 /* Custom Cells */,
 				C2F13BC727A4A61D00986C19 /* Model Controllers */,
 				C2F13BC627A4A61600986C19 /* View Controllers */,
 			);
@@ -202,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2F13BD127A4BCD800986C19 /* ToDoListTableViewController.swift in Sources */,
+				C22AF02A27A5930B0015FEE2 /* ToDoListTableViewCell.swift in Sources */,
 				C2F13BD327A4BCEF00986C19 /* ToDoListStepsTableViewController.swift in Sources */,
 				C2F13BCD27A4A97200986C19 /* ToDoListController.swift in Sources */,
+				C22AF02C27A777860015FEE2 /* ToDoListStepsTableViewCell.swift in Sources */,
 				C2F13BCF27A4A98A00986C19 /* ToDoListStepsController.swift in Sources */,
 				C2F13BAF27A4980800986C19 /* AppDelegate.swift in Sources */,
 				C2F13BC927A4A63600986C19 /* ToDoList.swift in Sources */,

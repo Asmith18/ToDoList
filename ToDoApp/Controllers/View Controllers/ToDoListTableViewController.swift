@@ -10,7 +10,8 @@ import UIKit
 class ToDoListTableViewController: UITableViewController {
 
 
-    @IBOutlet weak var toDoListNameTextField: UITextField!
+    @IBOutlet weak var taskNameTextField: UITextField!
+    
     
     var toDo: ToDoList?
 
@@ -24,8 +25,11 @@ class ToDoListTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListCell", for: indexPath) as? ToDoListTableViewCell else { return UITableViewCell() }
+        let toDo = ToDoListController.sharedInstance.toDos[indexPath.row]
+        cell.delegate = self
+        cell.updateViews(toDo: toDo)
+        
         
 
         return cell
@@ -41,7 +45,9 @@ class ToDoListTableViewController: UITableViewController {
         }    
     }
     @IBAction func createButton(_ sender: Any) {
-            guard let  
+        guard let task = taskNameTextField.text else {return}
+        ToDoListController.sharedInstance.createToDo(task: task)
+        tableView.reloadData()
     }
     
     /*
@@ -49,4 +55,13 @@ class ToDoListTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     */
+}
+
+extension ToDoListTableViewController: ToDoListTableViewCellDelegate {
+    func isCheckedToggled(cell: ToDoListTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {return}
+        let toggle = ToDoListController.sharedInstance.toDos[indexPath.row]
+        ToDoListController.sharedInstance.toggleisChecked(for: toggle)
+        cell.updateViews(toDo: toggle)
+    }
 }

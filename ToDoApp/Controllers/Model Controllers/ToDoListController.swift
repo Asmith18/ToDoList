@@ -37,7 +37,7 @@ class ToDoListController {
        // saveToDoToDisk()
     }
     
-    static func toggleisChecked(tasks: ToDoList) {
+    func toggleisChecked(for tasks: ToDoList) {
         tasks.isChecked.toggle()
        // ToDoListController.sharedInstance.saveToDoToDisk()
     }

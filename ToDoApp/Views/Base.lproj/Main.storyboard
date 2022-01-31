@@ -23,7 +23,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-hb-c2s">
                                     <rect key="frame" x="20" y="8" width="374" height="28"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-a7-kLn">
+                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter To Do Task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-a7-kLn">
                                             <rect key="frame" x="0.0" y="0.0" width="283" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -35,7 +35,7 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Create" buttonSize="large"/>
                                             <connections>
-                                                <action selector="createButton:" destination="EGI-Y2-hV1" eventType="touchUpInside" id="d34-w0-Y02"/>
+                                                <action selector="createButton:" destination="EGI-Y2-hV1" eventType="touchUpInside" id="gRY-ea-YkE"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -50,7 +50,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="77" id="Bld-G0-aPp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoListCell" rowHeight="77" id="Bld-G0-aPp" customClass="ToDoListTableViewCell" customModule="ToDoApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bld-G0-aPp" id="eHW-ru-Gxg">
@@ -64,6 +64,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="47.5" height="39"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.diamond" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="toggleCheckedButtonTapped:" destination="Bld-G0-aPp" eventType="touchUpInside" id="aWp-G0-UtF"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIA-EQ-oPD">
                                                     <rect key="frame" x="55.5" y="0.0" width="284" height="39"/>
@@ -88,7 +91,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Vtt-6J-UEk" kind="show" id="MG5-lK-0Hu"/>
+                                    <outlet property="checkedButton" destination="61V-cY-tZF" id="R1F-IS-thK"/>
+                                    <outlet property="numberOfStepsTextLabel" destination="pf4-YC-hvC" id="40Y-zh-dPD"/>
+                                    <outlet property="toDoListNameTextLabel" destination="yIA-EQ-oPD" id="PlL-5P-Tni"/>
+                                    <segue destination="Vtt-6J-UEk" kind="show" identifier="ToDoListCell" id="MG5-lK-0Hu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,7 +105,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List" id="zAt-xb-FVK"/>
                     <connections>
-                        <outlet property="toDoListNameTextField" destination="bGY-a7-kLn" id="EBm-4M-GbC"/>
+                        <outlet property="taskNameTextField" destination="bGY-a7-kLn" id="PvA-Op-vOW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeY-ml-Ejw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,7 +127,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wCK-96-G6h">
                                     <rect key="frame" x="20" y="8" width="374" height="28"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-a4-0Lp">
+                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter To Do Step..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GiE-a4-0Lp">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
