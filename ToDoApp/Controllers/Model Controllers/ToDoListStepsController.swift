@@ -13,24 +13,18 @@ class ToDoListStepsController: Codable {
     
     static let sharedInstance = ToDoListStepsController()
     
-    var tasks: [ToDoListSteps] = []
     
-     func createStep(step: String, toDo: [ToDoList]) {
+     func createStep(step: String, toDo: ToDoList) {
         let toDoListStep = ToDoListSteps(step: step)
-        tasks.append(toDoListStep)
+         toDo.numberOfSteps.append(toDoListStep)
     }
     
      func deleteStep(step: ToDoListSteps, toDo: ToDoList) {
        guard let index = toDo.numberOfSteps.firstIndex(of: step) else {return}
-        tasks.remove(at: index)
+         toDo.numberOfSteps.remove(at: index)
     }
     
      func toggleIsDone(step: ToDoListSteps) {
-        step.isDone.toggle()
-    }
-    
-    
-    func deleteAllTasks() {
-        tasks.forEach({$0.deleteAll = true})
+         step.isDone.toggle()
     }
 }

@@ -12,13 +12,11 @@ class ToDoListSteps: Codable {
     var step: String
     var isDone: Bool
     let id: UUID
-    var deleteAll: Bool
     
-    init(id: UUID = UUID(), step: String, isDone: Bool = false, deleteAll: Bool = false) {
+    init(id: UUID = UUID(), step: String, isDone: Bool = false) {
         self.id = id
         self.step = step
         self.isDone = isDone
-        self.deleteAll = deleteAll
     }
 }
 

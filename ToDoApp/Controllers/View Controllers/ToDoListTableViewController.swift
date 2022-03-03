@@ -7,11 +7,17 @@
 
 import UIKit
 
+let markAllisCompleted = NSNotification.Name("mark all as complete")
+
 class ToDoListTableViewController: UITableViewController {
 
 
     @IBOutlet weak var taskNameTextField: UITextField!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
     
     var toDo: ToDoList?
 
@@ -48,6 +54,16 @@ class ToDoListTableViewController: UITableViewController {
         guard let task = taskNameTextField.text else {return}
         ToDoListController.sharedInstance.createToDo(task: task)
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToDoListCell" {
+            if let index = tableView.indexPathForSelectedRow?.row {
+                guard let destination = segue.destination as? ToDoListStepsTableViewController else { return }
+                let task = ToDoListController.sharedInstance.toDos[index]
+                destination.toDo = task
+            }
+        }
     }
 }
 
